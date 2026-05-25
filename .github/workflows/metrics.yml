@@ -1,0 +1,24 @@
+name: Metrics
+
+on:
+  schedule:
+    - cron: "0 0 * * *" # daily at 00:00 UTC
+  workflow_dispatch: # allow manual runs from the Actions tab
+  push:
+    branches: [main]
+
+permissions:
+  contents: write # needed so the action can commit the SVG back
+
+jobs:
+  metrics:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: 0ch4/ocha-metrics@v1
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          username: 0ch4
+          theme: light
+          output: ocha-metrics.svg
+          commit: "true"
