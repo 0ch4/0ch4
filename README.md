@@ -1,4 +1,4 @@
-# こんにちは、0ch4 です 👋
+# 0ch4 です
 
 <!-- このカードは https://github.com/0ch4/ocha-metrics により毎日自動生成されています -->
 ![GitHub メトリクス](./ocha-metrics.svg)
